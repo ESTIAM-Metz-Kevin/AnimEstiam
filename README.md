@@ -1,9 +1,19 @@
-# TD AnimEstiam
+# Projet AnimEstiam
 
 Vous êtes en train de créer une application web nommée "AnimEstiam" vous permettant d'enregistrer vos animes préférés.
 
 Vous n'avez pas de serveur pour rendre l'enregistrement de vos données persistantes, mais vous avez travaillé sur une interface pour vous permettre déjà de les afficher.
 Après avoir fait la partie HTML et CSS, vous avez besoin maintenant de dynamiser la page avec javascript.
+
+# Notation & rendu
+
+Vous rendrez ce projet sur Github Classroom **ET vous ferez un zip de ce projet que vous enverrez sur Teams en tant que rendu de devoir**.
+
+Le projet sera noté sur **20 points (coef. 2)** basé sur les critères suivants, chacun sur **5 points** :
+* Réalisation du projet (Avancement, réalisation des fonctionnalités, ...)
+* Organisation (Découpage du projet, attribution des tâches, utilisation de git, ...)
+* Qualité (Lisibilité du code, maintenabilité du code, clarté des fonctions et des classes, utilisation de fonction de rappel, de promesses, ...)
+* Personnel (Votre contribution personnelle dans le groupe)
 
 # Où trouver les données des animes
 
@@ -15,11 +25,9 @@ Nous allons utilser Axios pour faciliter nos requêtes AJAX vers cette API
 
 https://github.com/axios/axios
 
-
-
 # Fonctionnalités de AnimEstiam à rendre dynamique
 
-## Barre de recherche
+## A. Barre de recherche
 
 Une barre de recherche est à notre disposition en haut à droite de la page :
 * En tapant dans cette barre, à partir de 3 lettres tapées, cela lancera une recherche d'anime par son nom
@@ -34,7 +42,7 @@ Une barre de recherche est à notre disposition en haut à droite de la page :
 * Pour permettre un meilleur découpage et éviter d'utiliser le système qui ajoute une carte en dépendance direct dans le code, on pourrait créer un évènement `onAnimeChoosed` sur lequel un autre élement pourrait écouter pour savoir si un anime a été choisi
   * https://developer.mozilla.org/fr/docs/Web/Guide/DOM/Events/Creating_and_triggering_events
 
-## Liste de cartes
+## B. Liste de cartes
 
 Nous avons une liste de cartes.
  Chaque carte représente un anime qui a été choisi depuis la barre de recherche.
@@ -47,7 +55,7 @@ On y trouve :
 
 Un bouton d'information est présent et ouvre une fenêtre modale.
 
-## Détail d'un anime
+## C. Détail d'un anime
 
 Dans la fenêtre ouverte lorsque l'on a cliqué sur le bouton `Info` d'une carte, nous pouvons trouver les informations suivantes :
 
@@ -73,13 +81,9 @@ Utilisez `querySelector` pour récupérer les éléments dont vous avez besoin
 Ne copiez pas de code html dans un code JS. Dans le cas d'une carte par exemple, utilisez l'élément HTML `template` pour stocker un contenu HTML qui sera utilisé en javascript en tant qu'instance
 * https://developer.mozilla.org/fr/docs/Web/HTML/Element/template
 
-Vous trouverez dans `scripts/api` plusieurs fichiers :
-* Ces fichiers sont incomplets, à vous de les compléter
-* Vous avez :
-  * Une classe d'api qui utilise Axios pour faire les appels AJAX vers l'API Jikan
-  * Une classe Resource qui est la classe de base pour chaque Resource référencée sur Jikan
-  * Une classe AnimeResource qui hérite de Resource pour gérer spécifiquement la référence `Anime` sur Jikan
-  * Une classe SearchResource qui hérite de Resource pour gérer spécifiquement la référence `Search` sur Jikan
+---
+
+Vous trouverez dans `scripts/api` plusieurs fichiers pour créer une petite librairie d'API, vous pouvez partir dessus si vous le souhaitez.
 
 Les classes vous permettent d'avoir une approche de ce que vous connaissez en orienté objet dans d'autres languages. Cela vous permettra de mieux découper chaque partie de code et d'y appliquer une logique algorithmique.
 
@@ -98,16 +102,16 @@ Par exemple :
 
 ---
 
-Vous êtes en groupe de deux :
+Vous êtes en groupe de trois ou quatre :
 * Communiquez régulièrement et soutenez-vous si besoin
 * Travaillez chacun sur votre branche
 * Séparez bien vos tâches entre vous au maximum pour évitez de vous marcher sur les pieds
-* Définissez vous bien vos points de jonction de code pour que lorsque vous fusionnez vos branches, il y ai le moins de conflits possibles et seulement quelques ajustements à faire.
+* Définissez vous bien vos points de jonction de code, lorsque vous fusionnerez vos branches, il y ai le moins de conflits possibles et seulement quelques ajustements à faire pour que votre système fonctionne.
 
 Par exemple :
-* Une personne peut travailler sur le mécanisme d'ajoute d'une carte en simulant les informations reçues en paramètres avec des données statiques
+* Une personne peut travailler sur le mécanisme d'ajout d'une carte en simulant les informations d'un anime reçues en paramètre avec des données statiques (une variable JSON)
 * L'autre personne peut quand à elle travailler sur la recherche
-* Quand les tâches sont finies de manière isolée => fusion sur la branche `master` et faites les ajustements sur votre point de jonction, ici la jonction est : quand je cliques sur un résultat de la recherche, cela va créer une carte de l'anime dans la liste
+* Quand les tâches sont finies de manière isolée => fusion sur la branche `master` et faites les ajustements sur vos points de jonction, ici la jonction peut-être : le système de recherche utilise une fonction de rappel pour donner les information de l'anime, un autre système (celui des cartes par exemple) aura crée cette fonction de rappel et l'aura affectée au système de recherche
 
 ---
 
