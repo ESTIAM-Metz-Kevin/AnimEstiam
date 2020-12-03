@@ -115,6 +115,12 @@ Par exemple :
 
 ---
 
+Vous pouvez vous appuyer sur ma proposition du projet de Morpion que nous avons fait, si ça peut vous aider :
+
+https://github.com/ESTIAM-Metz-Kevin/morpion-resultat-prof
+
+---
+
 ET SURTOUT :
 * Prenez l'habitude de savoir vous documenter et faire des recherches pour trouver la solution à vos problématiques
 * Osez demander de l'aide quand cela ne va vraiment pas, les intervenants sont là pour vous aider
